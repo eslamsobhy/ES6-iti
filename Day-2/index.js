@@ -34,6 +34,9 @@ async function getPosts(id) {
 }
 
 usersContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("users")) {
+    return;
+  }
   getPosts(e.target.attributes.name.nodeValue);
   document.querySelector(".active").classList.remove("active");
   e.target.classList.add("active");
