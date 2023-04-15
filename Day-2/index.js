@@ -35,6 +35,9 @@ async function getPosts(id) {
 
 usersContainer.addEventListener("click", function (e) {
   getPosts(e.target.attributes.name.nodeValue);
+  document.querySelector(".active").classList.remove("active");
+  e.target.classList.add("active");
 });
 
-// getPosts(1);
+// initially displaying the first user's post
+getPosts(1);
